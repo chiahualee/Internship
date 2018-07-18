@@ -1,0 +1,18 @@
+# mappings for geo location
+# run this in the dev tools on Kibana before ingesting data using logstash
+
+
+delete my_index
+
+PUT my_index
+{
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "location": {
+          "type": "geo_point"
+        }
+      }
+    }
+  }
+}
