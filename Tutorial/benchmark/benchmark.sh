@@ -13,7 +13,7 @@ for gpu_type in k80 p100; do
 			echo "     NUM_GPU = $num_gpu"
 			echo "     GPU_TYPE = $gpu_type"
 			echo "     Date = $t" 
-			ofile="$t-GPU-$gpu_type:$num_gpu";sbatch -p GPU-shared --gres=gpu:$gpu_type:$num_gpu -o ./results/$ofile gpuJob.sh
+			ofile="$t-GPU-$gpu_type:$num_gpu";sbatch -p GPU-shared --gres=gpu:$gpu_type:$num_gpu -o ./results/$ofile run_python.sh
 
 	    done
 	else [ $gpu_type == "p100" ]
@@ -22,7 +22,7 @@ for gpu_type in k80 p100; do
 			echo "     NUM_GPU = $num_gpu"
 			echo "     GPU_TYPE = $gpu_type"
 			echo "     Date = $t" 
-			ofile="$t-GPU-$gpu_type:$num_gpu";sbatch -p GPU-shared --gres=gpu:$gpu_type:$num_gpu -o ./results/$ofile gpuJob.sh
+			ofile="$t-GPU-$gpu_type:$num_gpu";sbatch -p GPU-shared --gres=gpu:$gpu_type:$num_gpu -o ./results/$ofile run_python.sh
         done
     fi
 done
@@ -35,7 +35,7 @@ for partition in RM;do
 		echo "     NUM_CORES = $num_cores"
 		echo "     PARTITION = $partition"
 		echo "     Date = $t"
-		ofile="$t-CPU-$partition:$num_cores";sbatch -p $partition -N 1 --ntasks-per-node=$num_cores -o ./results/$ofile gpuJob.sh
+		ofile="$t-CPU-$partition:$num_cores";sbatch -p $partition -N 1 --ntasks-per-node=$num_cores -o ./results/$ofile run_python.sh
 
 	done
 done

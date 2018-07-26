@@ -6,4 +6,4 @@
 #SBATCH --time=00:40:00
 module load AI/anaconda3-5.1.0_gpu
 source activate $AI_ENV
-time python nbTutorial.py
+time python Machine_Learning_Tutorial.py
