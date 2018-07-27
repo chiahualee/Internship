@@ -1,6 +1,46 @@
 
 # coding: utf-8
 
+# ## Machine Learning Tutorial - Document Classification on Enron Email Dataset
+# 
+# This tutorial aims to demonstrate the steps to build machine learning models with scikit learn and use the computational resources on Bridges.
+# 
+# 
+
+# Tutorial Duration: 1hr
+# 
+# Environment: module load AI/anaconda3-5.1.0_gpu
+# 
+# You can download the data here: http://nlp.cs.aueb.gr/software_and_datasets/Enron-Spam/index.html
+# 
+# Data Preprocessing: In total, we have 16,545 hams and 17,177 spams. These labeled Enron emails are given in six directories. And under each directories are subfolders holding spam and ham emails in their original form. With this, we can creat lables for our emails (1 for spam and 0 for ham). We first did some data cleansing and extracted the tokenized words as features to build our TF-IDF matrix. Then we randomly sampled our data and split it to train and test.
+# 
+# Experimental setup: We trained three classifiers (Naive Bayes, KNN and SVM) with the implementation of scikit-learn. To ensure stability of our model, we utilized 10 fold cross-validation to gauge the effectiveness of our model’s performance. Lastly, we used the reserved test data to provide an unbiased evaluation of a final model fit on the training dataset.
+
+# Simple Explanation on Models:
+#     
+# * Naive Bayes:
+# 
+# Naive Bayes classifier is based on the Bayes' Rule and strong (or naive) independence assumptions between features. 
+# 
+# Read More: https://www.analyticsvidhya.com/blog/2017/09/naive-bayes-explained/
+# 
+# 
+# * KNN:
+# 
+# KNN is also another classic classification algorithm. It stores all available cases and classifies new cases based on a similarity measure (e.g., distance functions).
+# 
+# Read More: https://medium.com/@adi.bronshtein/a-quick-introduction-to-k-nearest-neighbors-algorithm-62214cea29c7
+# 
+# 
+# * Linear SVM
+# 
+# SVM performs classification by finding the line that maximizes the margin between the two classes. 
+# 
+# Read More: https://medium.com/machine-learning-101/chapter-2-svm-support-vector-machine-theory-f0812effc72
+# 
+# 
+
 # ### Data Extraction
 
 # In[1]:
