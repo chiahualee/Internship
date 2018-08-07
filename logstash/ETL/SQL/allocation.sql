@@ -1,4 +1,4 @@
-Create view all_data2 as select row_number() over (order by short_date)::int as id, pifirstname,pilastname,pifirstname || ' ' || pilastname as piname,telephone,email,affiliation,lat,long, department, subgrantnumber,chargeid, username,machine,
+Create view all_data as select row_number() over (order by short_date)::int as id, pifirstname,pilastname,pifirstname || ' ' || pilastname as piname,telephone,email,affiliation,lat,long, department, subgrantnumber,chargeid, username,machine,
  job_id ,prorated_su_charged,to_char(short_date, 'YYYY-MM-DD') as short_date,partition,allocation,credits,debits,alloc_start,alloc_end,start_time as job_start_time,title,consultant, EXTRACT(EPOCH FROM (walltime)) as walltime, EXTRACT(EPOCH FROM (start_time-submit_time))  as wait_time,submit_time 
  from (select * 
  	   from (
